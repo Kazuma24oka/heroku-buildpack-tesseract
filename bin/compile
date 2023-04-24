@@ -7,7 +7,9 @@ INSTALL_DIR=$BUILD_DIR/vendor/tesseract-ocr/
 TESSERACT_OCR_DIR=${HOME}/vendor/tesseract-ocr
 ENVSCRIPT=$BUILD_DIR/.profile.d/tesseract-ocr.sh
 
-TESSERACT_OCR_LANGUAGES=eng
+TESSERACT_OCR_LANGUAGES=eng+jpn
+
+curl -sSL --retry 3 https://github.com/pathwaysmedical/heroku-buildpack-tesseract/raw/master/tesseract-ocr-$TESSERACT_OCR_VERSION.tar.gz -o $TESSERACT_OCR_TGZ
 
 echo "Unpacking Tesseract-OCR binaries"
 mkdir -p $INSTALL_DIR
